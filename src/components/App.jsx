@@ -21,7 +21,7 @@ const formSubmitHandler = (name, number) =>{
  const newContact = {
     id: nanoid(), name: name, number: number
   } 
- const isContactExist = () => contacts.find(contact => contact.name === name)
+ const isContactExist = contacts.find(contact => contact.name === name)
  if(isContactExist){
    alert("Contact with such name already exists in the phonebook")
    return
