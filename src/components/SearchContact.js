@@ -1,17 +1,24 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import {
     FormContainerDiv,
     Label,
     Input,
 } from "./Form/Form.styled.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter } from "redux/filterSlice.js";
 
-export const SearchContact =({onChange}) => {
- 
+export const SearchContact =() => {
+  
+ const dispatch = useDispatch();
+ const filter = useSelector((state) => state.filter);
+
   const findContact = (event) => {
-    onChange({
-      filter: event.target.value.toLowerCase(),
-    });
+  
+   const newFilter = event.target.value.toLowerCase();
+console.log(newFilter) 
+
+    dispatch(setFilter(newFilter));
+
   };
 
   
@@ -23,6 +30,3 @@ export const SearchContact =({onChange}) => {
     );
   
 }
-SearchContact.propTypes = {
-    onChange: PropTypes.func.isRequired,
-  };

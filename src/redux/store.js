@@ -1,17 +1,11 @@
-import { createStore } from "redux";
-import { useSelector } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
 
-import { devToolsEnhancer } from "@redux-devtools/extension";
-const initialState = {
-    contacts: [],
-    filters: {
-      status: "all",
-    },
-  };
+import contactsReducer from "./contactsSlice";
+import filterReducer from "./filterSlice"
+export const store = configureStore({
+  reducer: {
+    contacts: contactsReducer, 
+    filter: filterReducer,    
+  },
+});
 
-  const rootReducer = (state = initialState, action) => {
-    return state;
-  };
- // export const store = createStore(rootReducer);
-  const enhancer = devToolsEnhancer();
-export const store = createStore(rootReducer, enhancer);

@@ -1,12 +1,11 @@
-import PropTypes from 'prop-types';
 import {ContactsList,
        ContactItem,
        ContactName,
        ContactNumber,
        DeleteButton} from "./ContactsRender.styled.jsx"
 
-export const ContactsRender = ({contacts, onDeleteContact }) => {
-  //console.log(contacts)
+export const ContactsRender = ({onDeleteContact, contacts }) => {
+
     return (
       <ContactsList>
         {contacts && contacts.map(contact => (
@@ -17,8 +16,4 @@ export const ContactsRender = ({contacts, onDeleteContact }) => {
         ))}
       </ContactsList>
     );
-  };
-  ContactsRender.propTypes = {
-    contacts: PropTypes.array.isRequired,
-    onDeleteContact: PropTypes.func.isRequired,
   };
