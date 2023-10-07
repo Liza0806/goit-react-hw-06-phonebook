@@ -4,7 +4,7 @@ import {
     Label,
     Input,
 } from "./Form/Form.styled.jsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setFilter } from "redux/filterSlice.js";
 
 export const SearchContact =() => {
