@@ -10,7 +10,6 @@ import { setFilter } from "redux/filterSlice.js";
 export const SearchContact =() => {
   
  const dispatch = useDispatch();
- const filter = useSelector((state) => state.filter);
 
   const findContact = (event) => {
   
